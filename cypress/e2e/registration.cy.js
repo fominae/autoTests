@@ -54,4 +54,25 @@ describe('Registration Test', () => {
             cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
         })
     })
+
+    it('None existent password registration test', () => {
+        cy.fixture('register').then(data => {
+            cy.log('Переход на страницу регистрации')
+            cy.visit(data.main_url)
+
+            cy.log('Подходящий логин')
+            cy.get('div[class="form__labels"] input:first').type(data.login)
+
+            cy.log('Подходящая почта')
+            cy.get('div[class="form__labels"] div:first div:nth-child(2) input').type(data.email)
+
+            cy.log('Неподходящий пароль')
+            cy.get('div[class="form__labels"] div:first div:nth-child(3) input').type(data.none_existent_password)
+
+            cy.wait(1000)
+
+            cy.log('Вывод ошибки')
+            cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
+        })
+    })
 })
