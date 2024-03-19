@@ -27,7 +27,6 @@ describe('Requirement Test', () => {
 
             cy.log('Ввод требований')
             cy.get('.desktop-modal .labels .label:nth-child(4) div textarea').type(data.requirements)
-
         })
     })
 
@@ -192,6 +191,5 @@ describe('Requirement Test', () => {
             cy.get('.desktop-modal .labels .label:nth-child(4) div:nth-child(2)').should('exist')
         })
     })
-
-
 })
+
