@@ -5,6 +5,17 @@
   "password": "Password9",
   "confirm_password":"Password9",
 
+  "surname":"Фамилия" ,
+  "name": "Имя",
+  "patronymic": "Отчество",
+
+  "none_existent_surname":"surname" ,
+  "none_existent_name": "name",
+  "none_existent_patronymic": "patronymic",
+
+
+
+
   "none_existent_login": "Логин",
   "none_existent_email": "email@email",
   "none_existent_password": "123",
