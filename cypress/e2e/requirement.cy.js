@@ -22,6 +22,10 @@ describe('Requirement Test', () => {
             cy.log('Подходящее название потребности')
             cy.get('.desktop-modal .labels .label:first div input').type(data.name)
 
+            cy.log('Ввод обязанности')
+            cy.get('.desktop-modal .labels .label:nth-child(3) div textarea').type(data.responsibilities)
+
+
         })
     })
 
