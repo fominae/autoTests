@@ -212,6 +212,9 @@ describe('Registration Test', () => {
             cy.log('Клик по кнопке "Создать аккаунт"')
             cy.get('div[class="form__buttons"] div:nth-child(3) button[type="submit"]').click()
 
+            cy.wait(3000)
+
         })
     })
+
 })
