@@ -35,10 +35,10 @@ describe('Requirement Test Students', () => {
             cy.visit(data.main_url)
 
             cy.log("Ввод существующего логина")
-            cy.get('input[class="form-input--text form-input"]').type(data.student_login)
+            cy.get('input[class="form-input--text form-input"]').type(data.login_students)
 
             cy.log('Ввод существующего пароля')
-            cy.get('input[class="form-input--password form-input"]').type(data.student_password)
+            cy.get('input[class="form-input--password form-input"]').type(data.password_students)
 
             cy.log("Клик по кнопке 'Войти' ")
             cy.get('.button__background-color-green').click()
@@ -77,6 +77,32 @@ describe('Requirement Test Students', () => {
             cy.wait(2000)
 
             cy.get('div.notification-list-wrapper').first().find('button[type="submit"]').click()
+
+            cy.wait(2000)
+
+        })
+    })
+
+    it('Reading notifications', () => {
+        cy.fixture('requirement').then(data => {
+            cy.log("Переход на страницу авторизации")
+            cy.visit(data.main_url)
+
+            cy.log("Ввод существующего логина")
+            cy.get('input[class="form-input--text form-input"]').type(data.login_students)
+
+            cy.log('Ввод существующего пароля')
+            cy.get('input[class="form-input--password form-input"]').type(data.password_students)
+
+            cy.log("Клик по кнопке 'Войти' ")
+            cy.get('.button__background-color-green').click()
+            cy.wait(2000)
+
+            cy.log("Выбор пункта меню 'Уведомления' ")
+            cy.get('nav[class="header__nav"] a:nth-child(4)').click()
+            cy.wait(2000)
+
+            cy.get('div[class="header-container__desktop"] div[class="base-icon base-icon__medium base-icon__default notification-bell__icon__desktop"] svg[data-v-44e57f55]').click()
 
             cy.wait(2000)
 
