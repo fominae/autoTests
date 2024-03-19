@@ -29,6 +29,8 @@ describe('Login Test', () => {
       cy.log('Клик по кнопке "Войти"')
       cy.get('.button__background-color-green').click()
 
+      cy.wait(1000)
+
       cy.log('Вывод ошибки')
       cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
     })
@@ -48,6 +50,8 @@ describe('Login Test', () => {
       cy.log('Клик по кнопке "Войти"')
       cy.get('.button__background-color-green').click()
 
+      cy.wait(1000)
+
       cy.log('Вывод ошибки')
       cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
     })
@@ -65,6 +69,8 @@ describe('Login Test', () => {
 
         cy.log('Клик по кнопке "Войти"')
         cy.get('.button__background-color-green').click()
+
+        cy.wait(1000)
 
         cy.log('Вывод ошибки')
         cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
