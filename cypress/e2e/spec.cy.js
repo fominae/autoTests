@@ -11,7 +11,7 @@ describe('Login Test', () => {
       cy.get('input[class="form-input--password form-input"]').type(data.password)
 
       cy.log('Клик по кнопке "Войти"')
-      cy.get('div[class="login-form__button"] button[type="submit"]').click()
+      cy.get('.button__background-color-green').click()
 
     })
   })
