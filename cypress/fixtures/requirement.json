@@ -2,5 +2,7 @@
   "main_url": "https://dev.profteam.su/login",
   "login": "testerEmployer",
   "password": "Password1",
-  "name": "Кладовщик"
+  "name": "Кладовщик",
+  "responsibilities": "Обязанности 12345",
+  "requirements": "Требования 54321"
 }
