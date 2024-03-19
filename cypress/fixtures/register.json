@@ -3,5 +3,11 @@
   "login": "UseRs",
   "email": "uss@mail.com",
   "password": "Password9",
-  "confirm_password":"Password9"
+  "confirm_password":"Password9",
+
+  "none_existent_login": "Логин",
+  "none_existent_email": "email@email",
+  "none_existent_password": "123",
+  "none_existent_confirm_password":"Password5"
 }
+

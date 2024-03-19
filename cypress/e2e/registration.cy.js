@@ -1,6 +1,6 @@
 describe('Registration Test', () => {
     it('Existent registration test', () => {
-        cy.fixture('registration').then(data => {
+        cy.fixture('register').then(data => {
             cy.log('Переход на страницу регистрации')
             cy.visit(data.main_url)
 
@@ -18,7 +18,22 @@ describe('Registration Test', () => {
 
             cy.log('Клик по кнопке "Далее"')
             cy.get('div[class="form__buttons"] div:last button[type="submit"]').click()
+
         })
     })
 
+    it('None existent login registration test', () => {
+        cy.fixture('register').then(data => {
+            cy.log('Переход на страницу регистрации')
+            cy.visit(data.main_url)
+
+            cy.log('Не подходящий логин')
+            cy.get('div[class="form__labels"] input:first').type(data.none_existent_login)
+
+            cy.wait(1000)
+
+            cy.log('Вывод ошибки')
+            cy.get('div[class="form-error form-error-- form-error-- form-error--"]').should('exist')
+        })
+    })
 })
