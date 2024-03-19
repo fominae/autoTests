@@ -12,7 +12,21 @@ describe('Login Test', () => {
 
       cy.log('Клик по кнопке "Войти"')
       cy.get('.button__background-color-green').click()
+    })
+  })
+  it('None existent login test', () => {
+    cy.fixture('login_test').then(data => {
+      cy.log('Переход на страницу авторизации')
+      cy.visit(data.main_url)
 
+      cy.log('Не существующий логин')
+      cy.get('input[class="form-input--text form-input"]').type(data.none_existent_login)
+
+      cy.log('Не существующий пароль')
+      cy.get('input[class="form-input--password form-input"]').type(data.none_existent_password)
+
+      cy.log('Клик по кнопке "Войти"')
+      cy.get('.button__background-color-green').click()
     })
   })
 })

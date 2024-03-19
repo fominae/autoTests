@@ -1,5 +1,7 @@
 {
   "main_url": "https://dev.profteam.su/login",
   "login": "users",
-  "password": "Password1"
+  "password": "Password1",
+  "none_existent_login": "Users" ,
+  "none_existent_password": "Password6"
 }
