@@ -1,5 +1,5 @@
 describe('Requirement Test', () => {
-    it('Existent login and password test requirement', () => {
+    it('Test requirement', () => {
         cy.fixture('requirement').then(data => {
             cy.log('Переход на страницу авторизации')
             cy.visit(data.main_url)
@@ -18,6 +18,10 @@ describe('Requirement Test', () => {
 
             cy.log('Клик по ссылку "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
+
+            cy.log('Подходящее название потребности')
+            cy.get('.desktop-modal .labels .label:first div input').type(data.name)
+
         })
     })
 

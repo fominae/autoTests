@@ -1,5 +1,6 @@
 {
   "main_url": "https://dev.profteam.su/login",
   "login": "testerEmployer",
-  "password": "Password1"
+  "password": "Password1",
+  "name": "Кладовщик"
 }
