@@ -1,5 +1,5 @@
 describe('Requirement Test', () => {
-    it('Test requirement', () => {
+    it('Exceeding value requirement', () => {
         cy.fixture('requirement').then(data => {
             cy.log('Переход на страницу авторизации')
             cy.visit(data.main_url)
@@ -13,20 +13,35 @@ describe('Requirement Test', () => {
             cy.log('Клик по кнопке "Войти"')
             cy.get('.button__background-color-green').click()
 
-            cy.log('Клик по ссылку "Потребности"')
+            cy.log('Клик по ссылке "Потребности"')
             cy.get('div[class="page-navigation"] div:first div:nth-child(6) p').click()
 
-            cy.log('Клик по ссылку "Создать потребность"')
+            cy.log('Клик по ссылке "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
 
-            cy.log('Подходящее название потребности')
-            cy.get('.desktop-modal .labels .label:first div input').type(data.name)
+            cy.log('Не подходящее название потребности')
+            cy.get('.desktop-modal .labels .label:first div input').type(data.exceeding_name)
 
-            cy.log('Ввод обязанности')
-            cy.get('.desktop-modal .labels .label:nth-child(3) div textarea').type(data.responsibilities)
+            cy.wait(1000)
 
-            cy.log('Ввод требований')
-            cy.get('.desktop-modal .labels .label:nth-child(4) div textarea').type(data.requirements)
+            cy.log('Вывод ошибки')
+            cy.get('.desktop-modal .labels .label:first div:nth-child(2)').should('exist')
+
+            cy.log('Ввод не подходящей обязанности')
+            cy.get('.desktop-modal .labels .label:nth-child(3) div textarea').type(data.exceeding_responsibilities)
+
+            cy.wait(1000)
+
+            cy.log('Вывод ошибки')
+            cy.get('.desktop-modal .labels .label:nth-child(3) div:nth-child(2)').should('exist')
+
+            cy.log('Ввод неподходящих требований')
+            cy.get('.desktop-modal .labels .label:nth-child(4) div textarea').type(data.exceeding_requirements)
+
+            cy.wait(1000)
+
+            cy.log('Вывод ошибки')
+            cy.get('.desktop-modal .labels .label:nth-child(4) div:nth-child(2)').should('exist')
         })
     })
 
@@ -44,10 +59,10 @@ describe('Requirement Test', () => {
             cy.log('Клик по кнопке "Войти"')
             cy.get('.button__background-color-green').click()
 
-            cy.log('Клик по ссылку "Потребности"')
+            cy.log('Клик по ссылке "Потребности"')
             cy.get('div[class="page-navigation"] div:first div:nth-child(6) p').click()
 
-            cy.log('Клик по ссылку "Создать потребность"')
+            cy.log('Клик по ссылке "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
 
             cy.log('Подходящее название потребности')
@@ -93,10 +108,10 @@ describe('Requirement Test', () => {
             cy.log('Клик по кнопке "Войти"')
             cy.get('.button__background-color-green').click()
 
-            cy.log('Клик по ссылку "Потребности"')
+            cy.log('Клик по ссылке "Потребности"')
             cy.get('div[class="page-navigation"] div:first div:nth-child(6) p').click()
 
-            cy.log('Клик по ссылку "Создать потребность"')
+            cy.log('Клик по ссылке "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
 
             cy.log('Подходящее название потребности')
@@ -131,10 +146,10 @@ describe('Requirement Test', () => {
             cy.log('Клик по кнопке "Войти"')
             cy.get('.button__background-color-green').click()
 
-            cy.log('Клик по ссылку "Потребности"')
+            cy.log('Клик по ссылке "Потребности"')
             cy.get('div[class="page-navigation"] div:first div:nth-child(6) p').click()
 
-            cy.log('Клик по ссылку "Создать потребность"')
+            cy.log('Клик по ссылке "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
 
             cy.log('Подходящее название потребности')
@@ -169,10 +184,10 @@ describe('Requirement Test', () => {
             cy.log('Клик по кнопке "Войти"')
             cy.get('.button__background-color-green').click()
 
-            cy.log('Клик по ссылку "Потребности"')
+            cy.log('Клик по ссылке "Потребности"')
             cy.get('div[class="page-navigation"] div:first div:nth-child(6) p').click()
 
-            cy.log('Клик по ссылку "Создать потребность"')
+            cy.log('Клик по ссылке "Создать потребность"')
             cy.get('div[class="needs-block__content"] div:first button[type="submit"]').click()
 
             cy.log('Подходящее название потребности')
