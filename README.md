@@ -9,7 +9,6 @@
 ```
 npm install cypress --save-dev
 ```
-```
 
 ### 6. Открытие cypress
 ```
