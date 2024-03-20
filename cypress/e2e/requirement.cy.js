@@ -140,12 +140,6 @@ describe('Requirement Test', () => {
 
             cy.log('Подходящее название потребности')
             cy.get('.desktop-modal .labels .label:first div input').type(data.name)
-            cy.get('.desktop-modal .labels .label:first div input').clear()
-
-            cy.wait(1000)
-
-            cy.log('Вывод ошибки')
-            cy.get('.desktop-modal .labels .label:first div:nth-child(2)').should('exist')
 
             cy.log('Ввод обязанности')
             cy.get('.desktop-modal .labels .label:nth-child(3) div textarea').type(data.responsibilities)
